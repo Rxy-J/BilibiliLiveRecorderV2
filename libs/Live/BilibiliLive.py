@@ -1,8 +1,5 @@
 from .BaseLive import BaseLive
 
-import json
-
-
 class BiliBiliLive(BaseLive):
     def __init__(self, room_id):
         super().__init__()

@@ -7,7 +7,7 @@ from PyQt5 import QtWidgets
 LOG_PATH = "Log"
 LOG_FILE = "log.log"
 
-class Log:
+class Logger:
     def __init__(self, rootPath, window):
         self.window = window
         self.logPath = os.path.join(rootPath, LOG_PATH)
@@ -27,7 +27,7 @@ class Log:
         QtWidgets.QApplication.processEvents() #一定加上这个功能，不然有卡顿
         with open(self.logFile, "a", encoding="UTF-8") as f:
             f.write(log+"\n")
-        # print(log)
+        print(log)
     
     def error(self, logInfo, roomId=None):
         logTime = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
@@ -41,4 +41,4 @@ class Log:
         QtWidgets.QApplication.processEvents() #一定加上这个功能，不然有卡顿
         with open(self.logFile, "a", encoding="UTF-8") as f:
             f.write(log+"\n")
-        # print(log)
+        print(log)
